@@ -1,13 +1,17 @@
 require 'pry'
+
 class BankAccount
     
     attr_reader :name  
     attr_accessor :balance, :status
     
+    @@account_info = []
+    
     def initialize(name, balance =1000, status = "open")
         @name = name 
         @balance = balance 
         @status = status
+        @@account_info << name
     end 
     #binding.pry
     def deposit(money)
